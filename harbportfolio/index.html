@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👋 Hi! I'm Harvey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <button onclick="scrollToTop()">About Me</button>
+        </div>
+        <div class="nav-right">
+            <button onclick="scrollToSection('projects')">Projects</button>
+            <button onclick="scrollToSection('contact')">Contact</button>
+        </div>
+    </header>
+
+    <div id="about" class="content">
+        <div class="text-section">
+            <h1>I am a</h1>
+            <h2>Developer</h2>
+            <p>I'm <b>Harvey Rodriguez</b>, a first-year Computer Science student eager to learn more about technologies in order to create digital convenience.</p>
+            <p>I am currently learning how to use <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b> with the goal of becoming a skilled developer capable of making innovations that improve our daily lives.</p>
+        </div>
+
+        <div class="photo-section">
+            <img src="harb.png" alt="Harvey Photo">
+        </div>
+    </div>
+
+    <div id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <p>underconstructionpo</p>
+    </div>
+
+    <div id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <p>underconstructionpo!</p>
+    </div>
+
+<script>
+    function scrollToSection(id) {
+        const element = document.getElementById(id);
+        const headerOffset = 80; // height of the header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
